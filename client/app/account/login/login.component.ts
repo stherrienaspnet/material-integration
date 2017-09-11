@@ -14,6 +14,7 @@ interface User {
 @Component({
   selector: 'login',
   template: require('./login.html'),
+  styles: [require('./login.scss')]
 })
 export class LoginComponent {
   user: User = {
@@ -29,6 +30,9 @@ export class LoginComponent {
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern(EMAIL_REGEX)]);
+
+  passwordFormControl = new FormControl('', [
+    Validators.required]);
 
 
   static parameters = [AuthService, Router];

@@ -4,18 +4,15 @@
       <h1>Sign up</h1>
     </div>
     <div class="col-sm-12">
-      <form class="form" name="form" (ngSubmit)="register(form)" novalidate #signupForm="ngForm">
+      <form class="form" name="form" (ngSubmit)="register(form)" #signupForm="ngForm">
+        <md-form-field class="example-full-width">
+          <input mdInput placeholder="name" name="name" [(ngModel)]="user.name" [formControl]="nameFormControl">
+          <md-error *ngIf="nameFormControl.hasError('required')">
+            Name is <strong>required</strong>
+          </md-error>
+        </md-form-field>
 
-        <div class="form-group"
-          [class.has-success]="name.valid && submitted"
-          [class.has-error]="!name.valid && submitted">
-          <label>Name</label>
 
-          <input type="text" name="name" class="form-control" [(ngModel)]="user.name" required #name="ngModel">
-          <p class="help-block" [hidden]="name.valid || (name.pristine && !signupForm.submitted)">
-            A name is required
-          </p>
-        </div>
 
         <div class="form-group"
           [class.has-success]="email.valid && signupForm.submitted"
@@ -45,6 +42,8 @@
             required
             mongoose-error
             #password="ngModel"/>
+
+
           <p class="help-block" [hidden]="password.valid || (password.pristine && !signupForm.submitted)">
             Password must be between 8 and 128 characters.
           </p>

@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {MdInputModule} from '@angular/material';
+import {MdInputModule, MdButtonModule, MdCard, MdCardContent} from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-
-
 
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -29,6 +27,8 @@ const accountRoutes: Routes = [{
         ReactiveFormsModule,
         BrowserModule,
         MdInputModule,
+        MdButtonModule,
+
         BrowserAnimationsModule,
         RouterModule.forChild(accountRoutes),
 

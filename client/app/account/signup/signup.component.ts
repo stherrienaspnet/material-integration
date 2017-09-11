@@ -1,6 +1,7 @@
 // @flow
 import { Component } from '@angular/core';
-
+import {FormControl, Validators} from '@angular/forms';
+const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 import { Router } from '@angular/router';
 import { AuthService } from '../../../components/auth/auth.service';
 

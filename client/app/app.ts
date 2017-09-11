@@ -1,6 +1,6 @@
 import 'style-loader!./app.scss';
 
-import '!!style-loader!css-loader!@angular/material/prebuilt-themes/deeppurple-amber.css';
+import '!!style-loader!css-loader!@angular/material/prebuilt-themes/indigo-pink.css';
 
 import './polyfills';
 
